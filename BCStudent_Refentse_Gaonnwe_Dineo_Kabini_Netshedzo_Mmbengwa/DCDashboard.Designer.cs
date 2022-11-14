@@ -36,7 +36,7 @@ namespace StudentBC
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSignOut = new System.Windows.Forms.Button();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
-            this.pbStd = new System.Windows.Forms.PictureBox();
+            this.pictureboxStd = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStdNr = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@ namespace StudentBC
             this.label15 = new System.Windows.Forms.Label();
             this.OFImage = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,14 +137,14 @@ namespace StudentBC
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
-            // pbStd
+            // pictureboxStd
             // 
-            this.pbStd.Location = new System.Drawing.Point(219, 69);
-            this.pbStd.Name = "pbStd";
-            this.pbStd.Size = new System.Drawing.Size(123, 110);
-            this.pbStd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbStd.TabIndex = 5;
-            this.pbStd.TabStop = false;
+            this.pictureboxStd.Location = new System.Drawing.Point(236, 50);
+            this.pictureboxStd.Name = "pictureboxStd";
+            this.pictureboxStd.Size = new System.Drawing.Size(122, 96);
+            this.pictureboxStd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureboxStd.TabIndex = 5;
+            this.pictureboxStd.TabStop = false;
             // 
             // label1
             // 
@@ -354,9 +354,9 @@ namespace StudentBC
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(367, 115);
+            this.btnBrowse.Location = new System.Drawing.Point(252, 166);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(112, 28);
+            this.btnBrowse.Size = new System.Drawing.Size(106, 22);
             this.btnBrowse.TabIndex = 34;
             this.btnBrowse.Text = "Add image";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -424,7 +424,7 @@ namespace StudentBC
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtStdNr);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbStd);
+            this.Controls.Add(this.pictureboxStd);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnDeleteStudent);
@@ -432,7 +432,7 @@ namespace StudentBC
             this.Name = "DCDashboard";
             this.Text = "DCDashboard";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbStd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -448,7 +448,7 @@ namespace StudentBC
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Button btnDeleteStudent;
-        private System.Windows.Forms.PictureBox pbStd;
+        private System.Windows.Forms.PictureBox pictureboxStd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStdNr;
         private System.Windows.Forms.TextBox txtName;
