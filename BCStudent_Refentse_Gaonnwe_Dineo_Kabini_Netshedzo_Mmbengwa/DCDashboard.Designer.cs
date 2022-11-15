@@ -1,5 +1,5 @@
 ﻿
-namespace StudentBC
+namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
 {
     partial class DCDashboard
     {
