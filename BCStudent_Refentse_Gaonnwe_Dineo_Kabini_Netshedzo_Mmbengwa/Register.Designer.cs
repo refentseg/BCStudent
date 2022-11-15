@@ -65,6 +65,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(229, 26);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblPassword
             // 
@@ -90,6 +91,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(229, 26);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtConfirm
             // 
@@ -97,6 +99,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(229, 26);
             this.txtConfirm.TabIndex = 6;
+            this.txtConfirm.TextChanged += new System.EventHandler(this.txtConfirm_TextChanged);
             // 
             // btnCancel
             // 

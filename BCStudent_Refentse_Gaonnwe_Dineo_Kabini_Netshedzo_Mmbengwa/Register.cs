@@ -55,5 +55,21 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             Register reg = new Register();
             reg.Show();
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            string userInput = txtUsername.Text;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            var userInput = txtPassword.Text;
+        }
+
+        private void txtConfirm_TextChanged(object sender, EventArgs e)
+        {
+            var userInput = txtConfirm.Text;
+        }
     }
+    
 }
