@@ -16,5 +16,34 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+             FileHandler fh = new FileHandler();
+            string name = fh.CheckUser().GetValue(0).ToString();
+            string pass = fh.CheckUser().GetValue(1).ToString();
+            
+
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            if (name == username && pass == password)
+            {
+
+                DCDashboard dc = new DCDashboard();
+                this.Close();
+                dc.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please input the correct user credentials");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 frm = new Form1();
+            frm.Show();
+        }
     }
 }

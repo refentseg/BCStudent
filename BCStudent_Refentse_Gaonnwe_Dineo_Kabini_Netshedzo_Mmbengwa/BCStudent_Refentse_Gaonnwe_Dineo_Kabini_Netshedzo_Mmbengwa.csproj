@@ -53,6 +53,7 @@
     <Compile Include="DCDashboard.Designer.cs">
       <DependentUpon>DCDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
