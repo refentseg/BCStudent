@@ -41,9 +41,16 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             Form1 frm = new Form1();
             frm.Show();
+        }
+
+        private void lnkCreate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register rec = new Register();
+            rec.Show();
+            this.Hide();
         }
     }
 }

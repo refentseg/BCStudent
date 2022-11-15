@@ -34,11 +34,13 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lnkCreate = new System.Windows.Forms.LinkLabel();
+            this.lblCreate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(69, 296);
+            this.btnLogin.Location = new System.Drawing.Point(69, 244);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 51);
             this.btnLogin.TabIndex = 0;
@@ -80,7 +82,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(314, 296);
+            this.btnCancel.Location = new System.Drawing.Point(284, 244);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 51);
             this.btnCancel.TabIndex = 5;
@@ -88,11 +90,33 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lnkCreate
+            // 
+            this.lnkCreate.AutoSize = true;
+            this.lnkCreate.Location = new System.Drawing.Point(212, 403);
+            this.lnkCreate.Name = "lnkCreate";
+            this.lnkCreate.Size = new System.Drawing.Size(142, 20);
+            this.lnkCreate.TabIndex = 6;
+            this.lnkCreate.TabStop = true;
+            this.lnkCreate.Text = "Create an Account";
+            this.lnkCreate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCreate_LinkClicked);
+            // 
+            // lblCreate
+            // 
+            this.lblCreate.AutoSize = true;
+            this.lblCreate.Location = new System.Drawing.Point(12, 403);
+            this.lblCreate.Name = "lblCreate";
+            this.lblCreate.Size = new System.Drawing.Size(177, 20);
+            this.lblCreate.TabIndex = 7;
+            this.lblCreate.Text = "Don\'t have an account?";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCreate);
+            this.Controls.Add(this.lnkCreate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
@@ -114,6 +138,8 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.LinkLabel lnkCreate;
+        private System.Windows.Forms.Label lblCreate;
     }
 }
 
