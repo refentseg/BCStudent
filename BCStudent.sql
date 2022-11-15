@@ -23,7 +23,20 @@ ON
  AddressLine2 VARCHAR(20) NOT NULL,
  City VARCHAR(20) NOT NULL,
  Province VARCHAR(20) NOT NULL,
- PostalCode VARCHAR(4)
+ PostalCode VARCHAR(4) NOT NULL
+);
+
+USE BCStudent
+ALTER TABLE tblStudent
+ADD ModuleCode VARCHAR(6) FOREIGN KEY (ModuleCode) REFERENCES tblModule(ModuleCode) NOT NULL
+
+USE BCStudent
+CREATE TABLE tblModule
+(
+ModuleCode VARCHAR(6) PRIMARY KEY NOT NULL,
+ModName VARCHAR(50) NOT NULL,
+ModDescription VARCHAR(50) NOT NULL,
+Link VARCHAR(max) NOT NULL
 );
 
 GO

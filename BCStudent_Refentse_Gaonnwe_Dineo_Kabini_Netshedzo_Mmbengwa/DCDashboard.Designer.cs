@@ -66,14 +66,18 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.OFImage = new System.Windows.Forms.OpenFileDialog();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddModules = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(204, 595);
+            this.btnAddStudent.Location = new System.Drawing.Point(183, 601);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(99, 31);
             this.btnAddStudent.TabIndex = 0;
@@ -83,7 +87,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(343, 595);
+            this.btnUpdate.Location = new System.Drawing.Point(322, 601);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(105, 31);
             this.btnUpdate.TabIndex = 1;
@@ -98,7 +102,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.panel1.Controls.Add(this.btnSignOut);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 650);
+            this.panel1.Size = new System.Drawing.Size(165, 698);
             this.panel1.TabIndex = 2;
             // 
             // btnHome
@@ -119,7 +123,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             // btnSignOut
             // 
-            this.btnSignOut.Location = new System.Drawing.Point(-3, 617);
+            this.btnSignOut.Location = new System.Drawing.Point(-3, 667);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(168, 31);
             this.btnSignOut.TabIndex = 2;
@@ -129,7 +133,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(496, 595);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(475, 601);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(102, 31);
             this.btnDeleteStudent.TabIndex = 4;
@@ -391,11 +395,42 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             this.OFImage.FileName = "openFileDialog1";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(820, 401);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 40);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Modules";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(606, 444);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(558, 182);
+            this.dataGridView1.TabIndex = 43;
+            // 
+            // btnAddModules
+            // 
+            this.btnAddModules.Location = new System.Drawing.Point(804, 645);
+            this.btnAddModules.Name = "btnAddModules";
+            this.btnAddModules.Size = new System.Drawing.Size(172, 33);
+            this.btnAddModules.TabIndex = 44;
+            this.btnAddModules.Text = "Add Module";
+            this.btnAddModules.UseVisualStyleBackColor = true;
+            // 
             // DCDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 649);
+            this.ClientSize = new System.Drawing.Size(1177, 699);
+            this.Controls.Add(this.btnAddModules);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtPostalCode);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label12);
@@ -434,6 +469,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +514,8 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.OpenFileDialog OFImage;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAddModules;
     }
 }
