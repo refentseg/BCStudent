@@ -14,9 +14,6 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private string description;
         private string resources;
 
-
-        public Module() { }
-
         public Module(int code, string name)
         {
             this.code = code;
@@ -29,6 +26,10 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.Name = name;
             this.Description = description;
             this.Resources = resources;
+        }
+        public Module()
+        {
+
         }
 
         public int Code { get => code; set => code = value; }
