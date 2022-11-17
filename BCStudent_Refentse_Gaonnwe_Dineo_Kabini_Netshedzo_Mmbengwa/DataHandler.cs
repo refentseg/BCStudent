@@ -48,7 +48,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
                         cmd.Parameters.AddWithValue("@City", City);
                         cmd.Parameters.AddWithValue("@Province", Province);
                         cmd.Parameters.AddWithValue("@PostalCode", PostalCode);
-                        connect.Open();
+                    connect.Open();
                         cmd.ExecuteNonQuery();
                     
                 }
@@ -153,14 +153,60 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
                 }
             }
         }
+        //search student moduls
+        public DataTable SearchDataMod(int id)
+        {
+            using (SqlConnection connect = new SqlConnection(con))
+            {
+                SqlCommand cmd = new SqlCommand("spSearchStudentModules", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@StuNr", id);
+
+                connect.Open();
+                DataTable lb = new DataTable();
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    lb.Load(dr);
+                    return lb;
+                }
+            }
+        }
+
+
+       //ADD student to a Module
+       public void AddStuModule(int sometext,string code)
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(con))
+                {
+                    SqlCommand cmd = new SqlCommand("spStudentModule", connect);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@StuId", sometext);
+                    cmd.Parameters.AddWithValue("@ModuleCode", code);
+                    connect.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex);
+            }
+        }
+
+
+       
         public void AddModule(string modcode, string name, string description, string resources)
         {
             try
             {
                 using (SqlConnection connect = new SqlConnection(con))
                 {
-                    SqlCommand cmd = new SqlCommand("spAddStudent", connect);
+                    SqlCommand cmd = new SqlCommand("spAddaModule", connect);
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -188,7 +234,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             {
                 using (SqlConnection connect = new SqlConnection(con))
                 {
-                    SqlCommand cmd = new SqlCommand("spAddModule", connect);
+                    SqlCommand cmd = new SqlCommand("spUpdateModule", connect);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     

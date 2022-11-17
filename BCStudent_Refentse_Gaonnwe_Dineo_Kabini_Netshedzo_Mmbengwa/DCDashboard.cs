@@ -84,6 +84,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private void btnFind_Click(object sender, EventArgs e)
         {
             dgvStudents.DataSource = dh.SearchData(int.Parse(txtEnterId.Text));
+            dgvModules.DataSource = dh.SearchDataMod(int.Parse(txtEnterId.Text));
         }
 
         private void btnModule_Click(object sender, EventArgs e)
@@ -104,7 +105,13 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
 
         private void DCDashboard_Load(object sender, EventArgs e)
         {
+            dh.GetStudents();
+        }
 
+        private void btnStuModule_Click(object sender, EventArgs e)
+        {
+            StuModule newstumod = new StuModule();
+            newstumod.Show();
         }
     }
 }

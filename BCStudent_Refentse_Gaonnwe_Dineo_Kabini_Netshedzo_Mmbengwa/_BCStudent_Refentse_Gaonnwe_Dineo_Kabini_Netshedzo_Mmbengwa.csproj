@@ -76,6 +76,12 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
+    <Compile Include="StuModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StuModule.Designer.cs">
+      <DependentUpon>StuModule.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DCDashboard.resx">
       <DependentUpon>DCDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StuModule.resx">
+      <DependentUpon>StuModule.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

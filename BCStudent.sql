@@ -28,7 +28,21 @@ ON
 
 USE BCStudent
 ALTER TABLE tblStudent
-ADD ModuleCode VARCHAR(6) FOREIGN KEY (ModuleCode) REFERENCES tblModule(ModuleCode) NOT NULL
+DROP COLUMN ModuleCode
+
+
+
+
+
+USE BCStudent
+CREATE TABLE Student_subject
+(
+ModuleCode VARCHAR(6) FOREIGN KEY  (ModuleCode) REFERENCES tblModule(ModuleCode) NOT NULL,
+StuNr INT FOREIGN KEY (StuNr) REFERENCES tblStudent(StuNr) NOT NULL
+PRIMARY KEY(ModuleCode,StuNr)
+);
+
+
 
 USE BCStudent
 CREATE TABLE tblModule
@@ -105,4 +119,29 @@ GO
  BEGIN
 	SELECT* FROM tblStudent
 	WHERE StuNr = @StuNr
+END
+
+/* SEARCH Particular student subjects*/
+GO
+ CREATE PROCEDURE spSearchStudentModules
+ (
+ @StuNr INT
+ )
+ AS
+ BEGIN
+	SELECT tblModule.* FROM tblModule 
+	INNER JOIN Student_subject
+	ON tblModule.ModuleCode = Student_subject.ModuleCode
+	WHERE Student_subject.StuNr = @StuNr
+END
+
+GO
+CREATE PROCEDURE spStudentModule
+(
+@StuId INT,@ModuleCode VARCHAR(6)
+)
+AS
+BEGIN
+INSERT INTO Student_subject VALUES
+(@StuId,@ModuleCode)
 END

@@ -20,7 +20,6 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
 
         private void btnAddModule_Click(object sender, EventArgs e)
         {
-            DataHandler dh = new DataHandler();
             dh.AddModule(txtModuleCode.Text, txtModuleName.Text, txtModuleDesc.Text, rtbModuleRes.Text);
         }
 
@@ -38,7 +37,6 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
 
         private void btnUpdateModule_Click(object sender, EventArgs e)
         {
-            DataHandler dh = new DataHandler();
             dh.UpdateModule(txtModuleCode.Text, txtModuleName.Text, txtModuleDesc.Text, rtbModuleRes.Text);
         }
 
@@ -56,6 +54,11 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private void btnViewAllModules_Click(object sender, EventArgs e)
         {
             dgvModules.DataSource = dh.GetModules();
+        }
+
+        private void ModuleForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

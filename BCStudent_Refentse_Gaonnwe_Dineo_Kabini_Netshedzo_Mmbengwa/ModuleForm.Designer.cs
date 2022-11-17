@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtModuleCode = new System.Windows.Forms.TextBox();
-            this.txtModuleName = new System.Windows.Forms.TextBox();
+            this.rtbModuleRes = new System.Windows.Forms.RichTextBox();
             this.txtModuleDesc = new System.Windows.Forms.TextBox();
+            this.txtModuleName = new System.Windows.Forms.TextBox();
+            this.txtModuleCode = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAddModule = new System.Windows.Forms.Button();
             this.btnUpdateModule = new System.Windows.Forms.Button();
             this.btnRemoveModule = new System.Windows.Forms.Button();
             this.dgvModules = new System.Windows.Forms.DataGridView();
-            this.rtbModuleRes = new System.Windows.Forms.RichTextBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSerachModule = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,32 +67,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module Capture";
             // 
-            // label1
+            // rtbModuleRes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Code :";
+            this.rtbModuleRes.Location = new System.Drawing.Point(124, 226);
+            this.rtbModuleRes.Name = "rtbModuleRes";
+            this.rtbModuleRes.Size = new System.Drawing.Size(177, 25);
+            this.rtbModuleRes.TabIndex = 2;
+            this.rtbModuleRes.Text = "";
             // 
-            // label2
+            // txtModuleDesc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name :";
+            this.txtModuleDesc.Location = new System.Drawing.Point(124, 171);
+            this.txtModuleDesc.Name = "txtModuleDesc";
+            this.txtModuleDesc.Size = new System.Drawing.Size(177, 20);
+            this.txtModuleDesc.TabIndex = 1;
             // 
-            // label3
+            // txtModuleName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 178);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Description :";
+            this.txtModuleName.Location = new System.Drawing.Point(124, 115);
+            this.txtModuleName.Name = "txtModuleName";
+            this.txtModuleName.Size = new System.Drawing.Size(177, 20);
+            this.txtModuleName.TabIndex = 1;
+            // 
+            // txtModuleCode
+            // 
+            this.txtModuleCode.Location = new System.Drawing.Point(124, 54);
+            this.txtModuleCode.Name = "txtModuleCode";
+            this.txtModuleCode.Size = new System.Drawing.Size(177, 20);
+            this.txtModuleCode.TabIndex = 1;
             // 
             // label4
             // 
@@ -103,26 +105,32 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Resource :";
             // 
-            // txtModuleCode
+            // label3
             // 
-            this.txtModuleCode.Location = new System.Drawing.Point(124, 54);
-            this.txtModuleCode.Name = "txtModuleCode";
-            this.txtModuleCode.Size = new System.Drawing.Size(177, 20);
-            this.txtModuleCode.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Description :";
             // 
-            // txtModuleName
+            // label2
             // 
-            this.txtModuleName.Location = new System.Drawing.Point(124, 115);
-            this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(177, 20);
-            this.txtModuleName.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(52, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name :";
             // 
-            // txtModuleDesc
+            // label1
             // 
-            this.txtModuleDesc.Location = new System.Drawing.Point(124, 171);
-            this.txtModuleDesc.Name = "txtModuleDesc";
-            this.txtModuleDesc.Size = new System.Drawing.Size(177, 20);
-            this.txtModuleDesc.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Code :";
             // 
             // btnAddModule
             // 
@@ -162,14 +170,6 @@
             this.dgvModules.Size = new System.Drawing.Size(387, 238);
             this.dgvModules.TabIndex = 2;
             this.dgvModules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgModule_CellContentClick);
-            // 
-            // rtbModuleRes
-            // 
-            this.rtbModuleRes.Location = new System.Drawing.Point(124, 226);
-            this.rtbModuleRes.Name = "rtbModuleRes";
-            this.rtbModuleRes.Size = new System.Drawing.Size(177, 25);
-            this.rtbModuleRes.TabIndex = 2;
-            this.rtbModuleRes.Text = "";
             // 
             // btnHome
             // 
@@ -234,6 +234,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ModuleForm";
             this.Text = "ModuleForm";
+            this.Load += new System.EventHandler(this.ModuleForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModules)).EndInit();
