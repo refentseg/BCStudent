@@ -66,6 +66,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.OFImage = new System.Windows.Forms.OpenFileDialog();
+            this.btnModule = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
@@ -93,6 +94,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnModule);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnSignOut);
@@ -100,6 +102,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(165, 650);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnHome
             // 
@@ -314,6 +317,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.dgvStudents.RowTemplate.Height = 25;
             this.dgvStudents.Size = new System.Drawing.Size(558, 182);
             this.dgvStudents.TabIndex = 25;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             // 
             // label11
             // 
@@ -391,6 +395,16 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             this.OFImage.FileName = "openFileDialog1";
             // 
+            // btnModule
+            // 
+            this.btnModule.Location = new System.Drawing.Point(0, 138);
+            this.btnModule.Name = "btnModule";
+            this.btnModule.Size = new System.Drawing.Size(165, 31);
+            this.btnModule.TabIndex = 6;
+            this.btnModule.Text = "Modules";
+            this.btnModule.UseVisualStyleBackColor = true;
+            this.btnModule.Click += new System.EventHandler(this.btnModule_Click);
+            // 
             // DCDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +445,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.Controls.Add(this.btnUpdate);
             this.Name = "DCDashboard";
             this.Text = "DCDashboard";
+            this.Load += new System.EventHandler(this.DCDashboard_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
@@ -478,5 +493,6 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.OpenFileDialog OFImage;
+        private System.Windows.Forms.Button btnModule;
     }
 }

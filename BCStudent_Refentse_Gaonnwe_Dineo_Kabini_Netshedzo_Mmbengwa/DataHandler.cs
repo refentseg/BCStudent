@@ -153,5 +153,34 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
                 }
             }
         }
+
+        public void AddModule(string modcode, string name, string description, string resources)
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(con))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddStudent", connect);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ModAdd", modcode);
+
+                    cmd.Parameters.AddWithValue("@ModCode", modcode);
+                    cmd.Parameters.AddWithValue("@ModName", name);
+                    cmd.Parameters.AddWithValue("@ModDesc", description);
+                    cmd.Parameters.AddWithValue("@ModRes", resources);
+                    connect.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex);
+            }
+
+        }
     }
 }

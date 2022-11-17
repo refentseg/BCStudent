@@ -85,5 +85,26 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         {
             dgvStudents.DataSource = dh.SearchData(int.Parse(txtEnterId.Text));
         }
+
+        private void btnModule_Click(object sender, EventArgs e)
+        {
+            ModuleForm mfm = new ModuleForm();
+            mfm.Show();
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DCDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

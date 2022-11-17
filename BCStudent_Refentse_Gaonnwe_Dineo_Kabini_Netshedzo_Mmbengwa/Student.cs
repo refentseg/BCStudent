@@ -15,10 +15,10 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private long phoneNo;
         private string address;
         private byte[] image;
+        private int code;
 
-        public Student() { }
 
-        public Student(int id, string name, string surname, DateTime dob, string gender, long phoneNo, byte[] image, string address, int code) : base(code, name)
+        public Student(int id, string name, string surname, DateTime dob, string gender, long phoneNo, byte[] image, string address, int code) : base(name, name)
         {
             this.Id = id;
             this.Name = name;
@@ -37,6 +37,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         public string Gender { get => gender; set => gender = value; }
         public long PhoneNo { get => phoneNo; set => phoneNo = value; }
         public string Address { get => address; set => address = value; }
+        public int Code { get; private set; }
         public byte[] Image { get => image; set => image = value; }
     }
 }
