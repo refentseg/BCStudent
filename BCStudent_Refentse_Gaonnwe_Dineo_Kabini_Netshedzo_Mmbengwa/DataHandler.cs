@@ -153,5 +153,113 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
                 }
             }
         }
+
+        public void AddModule(string modcode, string name, string description, string resources)
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(con))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddStudent", connect);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                   
+                    cmd.Parameters.AddWithValue("@ModCode", modcode);
+                    cmd.Parameters.AddWithValue("@ModName", name);
+                    cmd.Parameters.AddWithValue("@ModDesc", description);
+                    cmd.Parameters.AddWithValue("@ModRes", resources);
+                    connect.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex);
+            }
+
+        }
+
+        public void UpdateModule(string modcode, string name, string description, string resources)
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(con))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddModule", connect);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    cmd.Parameters.AddWithValue("@ModCode", modcode);
+                    cmd.Parameters.AddWithValue("@ModName", name);
+                    cmd.Parameters.AddWithValue("@ModDesc", description);
+                    cmd.Parameters.AddWithValue("@ModRes", resources);
+                    connect.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong" + ex);
+            }
+
+        }
+
+        public DataTable DeleteModule(string modcode)
+        {
+            using (SqlConnection connect = new SqlConnection(con))
+            {
+                SqlCommand cmd = new SqlCommand("spDeleteModule", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ModCode", modcode);
+
+                connect.Open();
+                DataTable dt = new DataTable();
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    dt.Load(dr);
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable SearchModule(string modcode)
+        {
+            using (SqlConnection connect = new SqlConnection(con))
+            {
+                SqlCommand cmd = new SqlCommand("spSearchModule", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ModCode", modcode);
+
+                connect.Open();
+                DataTable lb = new DataTable();
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    lb.Load(dr);
+                    return lb;
+                }
+            }
+        }
+
+        public DataTable GetModules()
+        {
+            SqlConnection connect = new SqlConnection(con);
+            SqlDataAdapter adapter = new SqlDataAdapter("spGETModules", connect);
+
+            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataTable dt = new DataTable();
+
+            adapter.Fill(dt);
+            return dt;
+        }
+
+
     }
 }

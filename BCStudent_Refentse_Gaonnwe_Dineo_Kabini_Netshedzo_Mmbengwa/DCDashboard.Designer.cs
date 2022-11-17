@@ -66,9 +66,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.OFImage = new System.Windows.Forms.OpenFileDialog();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAddModules = new System.Windows.Forms.Button();
+            this.btnModule = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
@@ -97,6 +95,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnModule);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnSignOut);
@@ -104,6 +103,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(165, 698);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnHome
             // 
@@ -318,6 +318,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.dgvStudents.RowTemplate.Height = 25;
             this.dgvStudents.Size = new System.Drawing.Size(558, 182);
             this.dgvStudents.TabIndex = 25;
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             // 
             // label11
             // 
@@ -395,33 +396,15 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             // 
             this.OFImage.FileName = "openFileDialog1";
             // 
-            // label10
+            // btnModule
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(820, 401);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(136, 40);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Modules";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(606, 444);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 182);
-            this.dataGridView1.TabIndex = 43;
-            // 
-            // btnAddModules
-            // 
-            this.btnAddModules.Location = new System.Drawing.Point(804, 645);
-            this.btnAddModules.Name = "btnAddModules";
-            this.btnAddModules.Size = new System.Drawing.Size(172, 33);
-            this.btnAddModules.TabIndex = 44;
-            this.btnAddModules.Text = "Add Module";
-            this.btnAddModules.UseVisualStyleBackColor = true;
+            this.btnModule.Location = new System.Drawing.Point(0, 138);
+            this.btnModule.Name = "btnModule";
+            this.btnModule.Size = new System.Drawing.Size(165, 31);
+            this.btnModule.TabIndex = 6;
+            this.btnModule.Text = "Modules";
+            this.btnModule.UseVisualStyleBackColor = true;
+            this.btnModule.Click += new System.EventHandler(this.btnModule_Click);
             // 
             // DCDashboard
             // 
@@ -466,6 +449,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
             this.Controls.Add(this.btnUpdate);
             this.Name = "DCDashboard";
             this.Text = "DCDashboard";
+            this.Load += new System.EventHandler(this.DCDashboard_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxStd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
@@ -514,8 +498,6 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.OpenFileDialog OFImage;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAddModules;
+        private System.Windows.Forms.Button btnModule;
     }
 }
