@@ -16,6 +16,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         {
             InitializeComponent();
         }
+        DataHandler dh = new DataHandler();
 
         private void btnAddModule_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,28 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         private void dgModule_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnUpdateModule_Click(object sender, EventArgs e)
+        {
+            DataHandler dh = new DataHandler();
+            dh.UpdateModule(txtModuleCode.Text, txtModuleName.Text, txtModuleDesc.Text, rtbModuleRes.Text);
+        }
+
+        private void btnRemoveModule_Click(object sender, EventArgs e)
+        {
+            dh.DeleteModule(txtModuleCode.Text);
+            
+        }
+
+        private void btnSerachModule_Click(object sender, EventArgs e)
+        {
+            dgvModules.DataSource = dh.SearchModule(txtModuleCode.Text);
+        }
+
+        private void btnViewAllModules_Click(object sender, EventArgs e)
+        {
+            dgvModules.DataSource = dh.GetModules();
         }
     }
 }
