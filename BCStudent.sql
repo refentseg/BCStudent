@@ -27,14 +27,6 @@ ON
 );
 
 USE BCStudent
-ALTER TABLE tblStudent
-DROP COLUMN ModuleCode
-
-
-
-
-
-USE BCStudent
 CREATE TABLE Student_subject
 (
 ModuleCode VARCHAR(6) FOREIGN KEY  (ModuleCode) REFERENCES tblModule(ModuleCode) NOT NULL,
@@ -109,7 +101,7 @@ DELETE FROM tblStudent
 	WHERE StuNr = @StuNr
 END
 
-/*Search*/
+/*Search Student*/
 GO
  CREATE PROCEDURE spSearchStudent
  (
@@ -144,4 +136,65 @@ AS
 BEGIN
 INSERT INTO Student_subject VALUES
 (@StuId,@ModuleCode)
+END
+
+/*Show all Module*/
+GO
+CREATE PROCEDURE spGETModules
+AS
+BEGIN
+SELECT *
+FROM tblModule
+END
+/*Search a Module*/
+GO
+ CREATE PROCEDURE spSearchModule
+ (
+ @ModCode VarCHAR(6)
+ )
+ AS
+ BEGIN
+	SELECT* FROM tblModule
+	WHERE ModuleCode = @ModCode
+END
+/*Add Module*/
+GO
+CREATE PROCEDURE spAddaModule
+(
+@ModCode VARCHAR(6),@ModName VARCHAR(50),@ModDesc VARCHAR(50), @ModRes VARCHAR(50)
+)
+AS
+BEGIN
+INSERT INTO tblModule 
+VALUES(@ModCode,@ModName,@ModDesc,@ModRes)
+END
+
+/*Update Module*/
+
+GO
+CREATE PROCEDURE spUpdateModule
+(
+@ModCode VARCHAR(6),@ModName VARCHAR(50),@ModDesc VARCHAR(50), @ModRes VARCHAR(50)
+)
+AS
+BEGIN
+UPDATE tblModule SET
+ModuleCode =@ModCode,
+ModName =@ModName,
+ModDescription=@ModDesc,
+Link=@ModRes
+WHERE ModuleCode =@ModCode
+END
+
+
+/*Delete a Module*/
+ GO
+CREATE PROCEDURE spDeleteModule
+(
+	@ModCode VarCHAR(6)
+)
+AS
+BEGIN
+DELETE FROM tblModule
+	WHERE ModuleCode = @ModCode
 END

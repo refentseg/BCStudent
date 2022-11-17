@@ -199,7 +199,7 @@ namespace BCStudent_Refentse_Gaonnwe_Dineo_Kabini_Netshedzo_Mmbengwa
         }
 
 
-       
+       //Add Module
         public void AddModule(string modcode, string name, string description, string resources)
         {
             try
